@@ -15,3 +15,22 @@ Includes:
 > YamlFile handling
 > 
 > Items
+
+## Repo
+[![](https://jitpack.io/v/Dan-java/PluginAPI.svg)](https://jitpack.io/#Dan-java/PluginAPI)
+
+Maven:
+```maven
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+	
+	<dependency>
+	    <groupId>com.github.Dan-java</groupId>
+	    <artifactId>PluginAPI</artifactId>
+	    <version>1.0</version>
+	</dependency>
+```
