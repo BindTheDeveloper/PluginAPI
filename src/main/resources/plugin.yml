@@ -1,5 +1,0 @@
-name: PluginAPI
-version: '${project.version}'
-main: me.dan.pluginapi.PluginAPI
-authors: [ Dan ]
-description: Simple API for creating Plugins
