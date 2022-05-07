@@ -18,17 +18,6 @@ import java.util.Arrays;
 public abstract class CustomPlugin extends JavaPlugin {
 
     public CustomPlugin() {
-        File pluginsDir = new File(getServer().getWorldContainer(), "plugins");
-        if (!pluginsDir.exists()) {
-            pluginsDir.mkdirs();
-        }
-        File apiDir = new File(pluginsDir, "PluginAPI");
-        if (!apiDir.exists()) {
-            apiDir.mkdirs();
-        }
-        YamlFile yamlFile = new YamlFile("messages.yml", apiDir.getAbsolutePath(), null, this);
-        Configuration.loadConfig(yamlFile, Messages.values());
-        Serialization.register(Item.class);
     }
 
     public void registerCommands(AbstractCommand... abstractCommands) {
