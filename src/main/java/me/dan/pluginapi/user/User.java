@@ -1,5 +1,6 @@
 package me.dan.pluginapi.user;
 
+import me.dan.pluginapi.PluginAPI;
 import me.dan.pluginapi.file.gson.GsonUtil;
 import me.dan.pluginapi.user.data.UserData;
 import org.bukkit.Bukkit;
@@ -54,8 +55,12 @@ public class User {
         return type.cast(userData);
     }
 
-    public void save(){
+    public void save() {
         GsonUtil.save(UserManager.FOLDER, uuid.toString() + ".yml", this);
+    }
+
+    public static User get(UUID uuid) {
+        return PluginAPI.getInstance().getUserManager().getUser(uuid);
     }
 
 }
