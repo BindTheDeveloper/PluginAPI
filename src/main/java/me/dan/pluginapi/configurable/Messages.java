@@ -36,6 +36,6 @@ public enum Messages implements Configuration, Message {
 
     @Override
     public String getPrefix() {
-        return null;
+        return PREFIX.getString();
     }
 }
