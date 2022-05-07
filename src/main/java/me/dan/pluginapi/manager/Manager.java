@@ -1,5 +1,6 @@
 package me.dan.pluginapi.manager;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +31,8 @@ public class Manager<K, V> {
         return map.get(keyConvert(key));
     }
 
-
+    public Collection<V> getAll() {
+        return map.values();
+    }
 
 }
