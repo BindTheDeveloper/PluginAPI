@@ -1,7 +1,7 @@
 package me.dan.pluginapi.file.gson.adapters;
 
 import com.google.gson.*;
-import tech.candy_dev.candycommons.user.data.UserData;
+import me.dan.pluginapi.user.data.UserData;
 
 import java.lang.reflect.Type;
 
