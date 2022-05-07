@@ -1,7 +1,5 @@
 package me.dan.pluginapi.plugin;
 
-import lombok.Getter;
-import me.dan.pluginapi.PluginAPI;
 import me.dan.pluginapi.command.AbstractCommand;
 import me.dan.pluginapi.configurable.Messages;
 import me.dan.pluginapi.configuration.Configuration;
@@ -47,5 +45,11 @@ public abstract class CustomPlugin extends JavaPlugin {
         Arrays.stream(listeners).forEach(listener -> Bukkit.getServer().getPluginManager().registerEvents(listener, this));
     }
 
+    public abstract void enable();
+
+    @Override
+    public void onEnable() {
+        enable();
+    }
 
 }
