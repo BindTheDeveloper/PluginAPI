@@ -31,7 +31,7 @@ Maven:
 	<dependency>
 	    <groupId>com.github.Dan-java</groupId>
 	    <artifactId>PluginAPI</artifactId>
-	    <version>1.2</version>
+	    <version>1.4.0</version>
 	    <scope>provided</scope>
 	</dependency>
 ```
