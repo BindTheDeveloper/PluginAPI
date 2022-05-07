@@ -75,14 +75,22 @@ public class Item extends Serializable {
     public Map<String, Object> serialize() {
         Map<String, Object> map = new HashMap<>();
         map.put("id", material);
-        map.put("data", data.intValue());
-        map.put("name", name);
-        map.put("lore", lore);
-        List<String> itemFlags = new ArrayList<>();
-        for (ItemFlag itemFlag : getItemFlags()) {
-            itemFlags.add(itemFlag.name());
+        if (data != null) {
+            map.put("data", data.intValue());
         }
-        map.put("flags", itemFlags);
+        if (name != null) {
+            map.put("name", name);
+        }
+        if (lore != null) {
+            map.put("lore", lore);
+        }
+        if (itemFlags != null) {
+            List<String> itemFlags = new ArrayList<>();
+            for (ItemFlag itemFlag : getItemFlags()) {
+                itemFlags.add(itemFlag.name());
+            }
+            map.put("flags", itemFlags);
+        }
         if (enchantments != null) {
             for (Pair<Enchantment, Integer> pair : enchantments) {
                 map.put("enchantments." + pair.getKey().getName(), pair.getValue());
