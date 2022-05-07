@@ -15,6 +15,9 @@ public class Serialization {
     private static final List<Class<? extends Serializable>> CONFIG_MAP = new ArrayList<>();
 
     public static void register(Class<? extends Serializable> clazz) {
+        if (CONFIG_MAP.contains(clazz)) {
+            return;
+        }
         CONFIG_MAP.add(clazz);
     }
 

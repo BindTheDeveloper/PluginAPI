@@ -3,7 +3,9 @@ package me.dan.pluginapi.plugin;
 import me.dan.pluginapi.command.AbstractCommand;
 import me.dan.pluginapi.configurable.Messages;
 import me.dan.pluginapi.configuration.Configuration;
+import me.dan.pluginapi.configuration.Serialization;
 import me.dan.pluginapi.file.YamlFile;
+import me.dan.pluginapi.item.Item;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
 import org.bukkit.event.Listener;
@@ -26,6 +28,7 @@ public abstract class CustomPlugin extends JavaPlugin {
         }
         YamlFile yamlFile = new YamlFile("messages.yml", apiDir.getAbsolutePath(), null, this);
         Configuration.loadConfig(yamlFile, Messages.values());
+        Serialization.register(Item.class);
     }
 
     public void registerCommands(AbstractCommand... abstractCommands) {
