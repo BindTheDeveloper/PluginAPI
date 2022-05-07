@@ -34,6 +34,7 @@ public final class PluginAPI extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        userManager.runSaveTask();
         instance = null;
     }
 }

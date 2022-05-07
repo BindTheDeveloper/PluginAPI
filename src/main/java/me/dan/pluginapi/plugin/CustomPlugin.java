@@ -44,4 +44,11 @@ public abstract class CustomPlugin extends JavaPlugin {
         enable();
     }
 
+    @Override
+    public void onDisable() {
+        disable();
+    }
+
+    public abstract void disable();
+
 }

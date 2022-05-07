@@ -103,7 +103,7 @@ public class Item extends Serializable {
     public static Item deserialize(YamlFile yamlFile, String path) {
         YamlConfiguration c = yamlFile.getConfig();
         ItemBuilder build = Item.builder();
-        build.material(c.getString(path + ".material"));
+        build.material(c.getString(path + ".id"));
         if (c.contains(path + ".data")) {
             build.data((byte) c.getInt(path + ".data"));
         }
@@ -127,15 +127,15 @@ public class Item extends Serializable {
             build.itemFlags(itemFlags);
         }
 
-        if (c.contains(path + ".enchants")) {
+        if (c.contains(path + ".enchantments")) {
             List<Pair<Enchantment, Integer>> enchantList = new ArrayList<>();
-            for (String enchantKey : c.getConfigurationSection(path + ".enchants").getKeys(false)) {
+            for (String enchantKey : c.getConfigurationSection(path + ".enchantments").getKeys(false)) {
                 Enchantment enchantment = Enchantment.getByName(enchantKey.toUpperCase());
                 if (enchantment == null) {
                     continue;
                 }
 
-                enchantList.add(new Pair<>(enchantment, c.getInt(path + ".enchants." + enchantKey)));
+                enchantList.add(new Pair<>(enchantment, c.getInt(path + ".enchantments." + enchantKey)));
             }
             build.enchantments(enchantList);
         }
