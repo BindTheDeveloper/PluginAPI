@@ -6,7 +6,7 @@
 
     <groupId>me.dan</groupId>
     <artifactId>PluginAPI</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
 
     <name>PluginAPI</name>
@@ -76,6 +76,11 @@
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.obermuhlner</groupId>
+            <artifactId>big-math</artifactId>
+            <version>2.3.0</version>
         </dependency>
     </dependencies>
 </project>
