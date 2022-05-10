@@ -32,7 +32,7 @@ Maven:
 	<dependency>
 	    <groupId>com.github.iCode-Things</groupId>
 	    <artifactId>PluginAPI</artifactId>
-	    <version>1.4.4</version>
+	    <version>1.5.0</version>
 	    <scope>provided</scope>
 	</dependency>
 ```
