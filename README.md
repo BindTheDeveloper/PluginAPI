@@ -30,7 +30,7 @@ Maven:
 	</repositories>
 	
 	<dependency>
-	    <groupId>com.github.Dan-java</groupId>
+	    <groupId>com.github.iCode-Things</groupId>
 	    <artifactId>PluginAPI</artifactId>
 	    <version>1.4.4</version>
 	    <scope>provided</scope>
