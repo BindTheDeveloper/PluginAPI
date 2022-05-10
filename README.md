@@ -17,7 +17,8 @@ Includes:
 > Items
 
 ## Repo
-[![](https://jitpack.io/v/Dan-java/PluginAPI.svg)](https://jitpack.io/#Dan-java/PluginAPI)
+[![](https://jitpack.io/v/iCode-Things/PluginAPI.svg)](https://jitpack.io/#iCode-Things/PluginAPI)
+
 
 Maven:
 ```maven
