@@ -38,7 +38,7 @@ public class Manager<K, V> {
 
 
     /**
-     * @return Next Available ID IF TYPE IS INTEGER
+     * @return Next Available ID IF TYPE IS Int
      */
      public int getNextFreeId() {
          if (map.isEmpty()) {
