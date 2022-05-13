@@ -17,7 +17,8 @@ Includes:
 > Items
 
 ## Repo
-[![](https://jitpack.io/v/Dan-java/PluginAPI.svg)](https://jitpack.io/#Dan-java/PluginAPI)
+[![](https://jitpack.io/v/iCode-Things/PluginAPI.svg)](https://jitpack.io/#iCode-Things/PluginAPI)
+
 
 Maven:
 ```maven
@@ -29,9 +30,9 @@ Maven:
 	</repositories>
 	
 	<dependency>
-	    <groupId>com.github.Dan-java</groupId>
+	    <groupId>com.github.iCode-Things</groupId>
 	    <artifactId>PluginAPI</artifactId>
-	    <version>1.4.4</version>
+	    <version>1.5.0</version>
 	    <scope>provided</scope>
 	</dependency>
 ```
