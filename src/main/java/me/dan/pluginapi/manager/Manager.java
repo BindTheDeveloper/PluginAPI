@@ -1,6 +1,5 @@
 package me.dan.pluginapi.manager;
 
-import java.lang.reflect.ParameterizedType;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +10,11 @@ public class Manager<K, V> {
 
     public Manager() {
         this.map = new HashMap<>();
+        init();
+    }
+
+    public void init() {
+
     }
 
     public void insert(K key, V value) {
@@ -40,8 +44,8 @@ public class Manager<K, V> {
     /**
      * @return Next Available ID IF TYPE IS Int
      */
-     public int getNextFreeId() {
-         if (map.isEmpty()) {
+    public int getNextFreeId() {
+        if (map.isEmpty()) {
             return 1;
         }
 
