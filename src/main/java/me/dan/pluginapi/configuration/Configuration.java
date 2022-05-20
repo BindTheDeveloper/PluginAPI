@@ -2,6 +2,7 @@ package me.dan.pluginapi.configuration;
 
 import me.dan.pluginapi.file.YamlFile;
 import me.dan.pluginapi.item.Item;
+import me.dan.pluginapi.menu.Menu;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.util.List;
@@ -78,6 +79,10 @@ public interface Configuration {
 
     default boolean getBoolean() {
         return (Boolean) getValue();
+    }
+
+    default Menu getMenu() {
+        return (Menu) getValue();
     }
 
     default void saveValue(YamlFile yamlFile) {

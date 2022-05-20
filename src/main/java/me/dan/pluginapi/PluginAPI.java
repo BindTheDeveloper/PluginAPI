@@ -9,6 +9,8 @@ import me.dan.pluginapi.event.UserManagerLoadEvent;
 import me.dan.pluginapi.file.YamlFile;
 import me.dan.pluginapi.item.Item;
 import me.dan.pluginapi.location.LocationWrapper;
+import me.dan.pluginapi.menu.Menu;
+import me.dan.pluginapi.menu.MenuItem;
 import me.dan.pluginapi.menu.MenuManager;
 import me.dan.pluginapi.user.UserManager;
 import org.bukkit.Bukkit;
@@ -33,6 +35,8 @@ public final class PluginAPI extends JavaPlugin {
         }, 20);
         Serialization.register(Item.class);
         Serialization.register(LocationWrapper.class);
+        Serialization.register(Menu.class);
+        Serialization.register(MenuItem.class);
         Configuration.loadConfig(new YamlFile("config.yml", this.getDataFolder().getAbsolutePath(), null, this), Config.values());
         Configuration.loadConfig(new YamlFile("messages.yml", getDataFolder().getAbsolutePath(), null, this), Messages.values());
     }
