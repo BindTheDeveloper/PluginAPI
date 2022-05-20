@@ -1,9 +1,11 @@
 package me.dan.pluginapi.message;
 
+import me.dan.pluginapi.configuration.Configuration;
 import me.dan.pluginapi.util.Text;
 import org.bukkit.command.CommandSender;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface Message {
 

@@ -9,6 +9,7 @@ import me.dan.pluginapi.event.UserManagerLoadEvent;
 import me.dan.pluginapi.file.YamlFile;
 import me.dan.pluginapi.item.Item;
 import me.dan.pluginapi.location.LocationWrapper;
+import me.dan.pluginapi.menu.MenuManager;
 import me.dan.pluginapi.user.UserManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,9 +21,12 @@ public final class PluginAPI extends JavaPlugin {
 
     private UserManager userManager;
 
+    private MenuManager menuManager;
+
     @Override
     public void onEnable() {
         instance = this;
+        this.menuManager = new MenuManager();
         Bukkit.getScheduler().runTaskLater(this, () -> {
             this.userManager = new UserManager();
             Bukkit.getServer().getPluginManager().callEvent(new UserManagerLoadEvent());
