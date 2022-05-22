@@ -44,8 +44,9 @@ public interface Message {
 
         try {
             sentTitle((Player) player, placeholders);
-        } catch (ClassCastException e) {
             return;
+        } catch (ClassCastException e) {
+
         }
 
         String text = this.getString();
