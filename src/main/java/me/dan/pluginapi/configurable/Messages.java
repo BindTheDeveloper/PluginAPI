@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import me.dan.pluginapi.configuration.Configuration;
 import me.dan.pluginapi.message.Message;
+import me.dan.pluginapi.message.TitleMessage;
 
 import java.util.List;
 
@@ -25,6 +26,11 @@ public enum Messages implements Configuration, Message {
     }
 
     @Override
+    public String getPrefix() {
+        return PREFIX.getString();
+    }
+
+    @Override
     public List<String> getStringList() {
         return Configuration.super.getStringList();
     }
@@ -32,10 +38,5 @@ public enum Messages implements Configuration, Message {
     @Override
     public String getString() {
         return Configuration.super.getString();
-    }
-
-    @Override
-    public String getPrefix() {
-        return PREFIX.getString();
     }
 }
