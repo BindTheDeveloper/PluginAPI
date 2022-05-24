@@ -21,6 +21,11 @@ public class TitleMessage extends Serializable {
     @Setter
     private int duration = 20;
 
+    public TitleMessage(String header, String footer, int duration) {
+        this(header, footer);
+        this.duration = duration;
+    }
+
     @Override
     public Map<String, Object> serialize() {
         Map<String, Object> map = new HashMap<>();
