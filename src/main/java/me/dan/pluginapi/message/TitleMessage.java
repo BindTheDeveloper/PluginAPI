@@ -43,7 +43,7 @@ public class TitleMessage extends Serializable {
         String footer = c.getString(path + ".footer");
         TitleMessage titleMessage = new TitleMessage(header, footer);
         if (c.contains(path + ".duration")) {
-            titleMessage.setDuration(c.getInt(path + "duration"));
+            titleMessage.setDuration(c.getInt(path + ".duration"));
         }
         return titleMessage;
     }
