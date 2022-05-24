@@ -86,7 +86,7 @@ public interface Message {
         String header = Text.c(Placeholder.apply(titleMessage.getHeader(), placeholderList.toArray(new Placeholder[0])));
         String footer = Text.c(Placeholder.apply(titleMessage.getFooter(), placeholderList.toArray(new Placeholder[0])));
 
-        player.sendTitle(header, footer, 1, 20, 1);
+        player.sendTitle(header, footer, 1, titleMessage.getDuration(), 1);
     }
 
     default void broadcastTitle(Placeholder... placeholders) {
