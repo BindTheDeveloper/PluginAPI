@@ -3,6 +3,7 @@ package me.dan.pluginapi.plugin;
 import me.dan.pluginapi.command.AbstractCommand;
 import me.dan.pluginapi.configurable.Messages;
 import me.dan.pluginapi.configuration.Configuration;
+import me.dan.pluginapi.configuration.Serializable;
 import me.dan.pluginapi.configuration.Serialization;
 import me.dan.pluginapi.file.YamlFile;
 import me.dan.pluginapi.item.Item;
@@ -37,7 +38,16 @@ public abstract class CustomPlugin extends JavaPlugin {
         Arrays.stream(listeners).forEach(listener -> Bukkit.getServer().getPluginManager().registerEvents(listener, this));
     }
 
+    @SafeVarargs
+    public final void registerSerializers(Class<? extends Serializable>... serializables) {
+        for (Class<? extends Serializable> serializable : serializables) {
+            Serialization.register(serializable);
+        }
+    }
+
     public abstract void enable();
+
+    public abstract void disable();
 
     @Override
     public void onEnable() {
@@ -49,6 +59,5 @@ public abstract class CustomPlugin extends JavaPlugin {
         disable();
     }
 
-    public abstract void disable();
 
 }
