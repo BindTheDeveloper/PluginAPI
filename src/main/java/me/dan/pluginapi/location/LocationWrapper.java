@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import me.dan.pluginapi.configuration.Serializable;
 import me.dan.pluginapi.file.YamlFile;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.util.HashMap;
@@ -45,6 +47,10 @@ public class LocationWrapper extends Serializable {
 
         return obj.x == this.x && obj.y == this.y && obj.z == this.z && obj.world.equalsIgnoreCase(this.world);
 
+    }
+
+    public Location toBukkitLocation() {
+        return new Location(Bukkit.getWorld(world), x, y, z);
     }
 
 }
