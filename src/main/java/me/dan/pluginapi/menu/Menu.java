@@ -99,19 +99,20 @@ public class Menu extends Serializable {
         menu.setName(c.getString(path + ".name"));
         menu.setSize(c.getInt(path + ".size"));
         List<MenuItem> menuItems = new ArrayList<>();
-        for (String item : yamlFile.getConfig().getConfigurationSection(path + ".items").getKeys(false)) {
-            MenuItem menuItem = MenuItem.deserialize(yamlFile, path + ".items." + item);
-            menuItems.add(menuItem);
-        }
+        if (yamlFile.getConfig().contains(path + ".items")) {
+            for (String item : yamlFile.getConfig().getConfigurationSection(path + ".items").getKeys(false)) {
+                MenuItem menuItem = MenuItem.deserialize(yamlFile, path + ".items." + item);
+                menuItems.add(menuItem);
+            }
 
-        for (int i = 0; i < menuItems.size(); i++) {
-            if (menuItems.get(i).isFill()) {
-                menu.addItems(menuItems.get(i));
-                menuItems.remove(menuItems.get(i));
-                break;
+            for (int i = 0; i < menuItems.size(); i++) {
+                if (menuItems.get(i).isFill()) {
+                    menu.addItems(menuItems.get(i));
+                    menuItems.remove(menuItems.get(i));
+                    break;
+                }
             }
         }
-
         menu.addItems(menuItems.toArray(new MenuItem[0]));
         return menu;
     }
