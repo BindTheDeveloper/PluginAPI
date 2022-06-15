@@ -30,6 +30,7 @@ public class Item extends Serializable {
     private List<String> lore;
     private List<Pair<Enchantment, Integer>> enchantments;
     private List<ItemFlag> itemFlags;
+    private int amount = 1;
 
     public ItemStack toItemStack(Placeholder... placeholders) {
         if (material == null) {
@@ -41,7 +42,7 @@ public class Item extends Serializable {
             return null;
         }
 
-        ItemStack itemStack = new ItemStack(Material.getMaterial(material), 1, data != null ? data : 0);
+        ItemStack itemStack = new ItemStack(Material.getMaterial(material), amount, data != null ? data : 0);
 
         ItemMeta itemMeta = itemStack.getItemMeta();
         assert itemMeta != null;
