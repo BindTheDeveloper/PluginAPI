@@ -85,6 +85,7 @@ public class Item extends Serializable {
         if (lore != null) {
             map.put("lore", lore);
         }
+        map.put("amount", amount);
         if (itemFlags != null) {
             List<String> itemFlags = new ArrayList<>();
             for (ItemFlag itemFlag : getItemFlags()) {
@@ -139,6 +140,10 @@ public class Item extends Serializable {
                 enchantList.add(new Pair<>(enchantment, c.getInt(path + ".enchantments." + enchantKey)));
             }
             build.enchantments(enchantList);
+        }
+
+        if (c.contains(path + ".amount")) {
+            build.amount(c.getInt(path + ".amount"));
         }
 
         return build.build();
