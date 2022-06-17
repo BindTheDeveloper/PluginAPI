@@ -30,7 +30,7 @@ public class Item extends Serializable {
     private List<String> lore;
     private List<Pair<Enchantment, Integer>> enchantments;
     private List<ItemFlag> itemFlags;
-    private int amount = 1;
+    private int amount;
 
     public ItemStack toItemStack(Placeholder... placeholders) {
         if (material == null) {
