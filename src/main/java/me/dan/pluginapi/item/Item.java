@@ -42,7 +42,7 @@ public class Item extends Serializable {
             return null;
         }
 
-        ItemStack itemStack = new ItemStack(Material.getMaterial(material), amount, data != null ? data : 0);
+        ItemStack itemStack = new ItemStack(Material.getMaterial(material), amount <= 0 ? 1 : amount, data != null ? data : 0);
 
         ItemMeta itemMeta = itemStack.getItemMeta();
         assert itemMeta != null;
