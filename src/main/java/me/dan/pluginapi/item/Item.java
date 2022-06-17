@@ -85,7 +85,7 @@ public class Item extends Serializable {
         if (lore != null) {
             map.put("lore", lore);
         }
-        map.put("amount", amount);
+        map.put("amount", amount <= 0 ? 1 : amount);
         if (itemFlags != null) {
             List<String> itemFlags = new ArrayList<>();
             for (ItemFlag itemFlag : getItemFlags()) {
