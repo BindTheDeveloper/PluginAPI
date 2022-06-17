@@ -25,22 +25,22 @@ public class MenuItem extends Serializable {
 
     }
 
-    public MenuItem setItem(Item item){
+    public MenuItem setItem(Item item) {
         this.item = item;
         return this;
     }
 
-    public MenuItem setKey(String key){
+    public MenuItem setKey(String key) {
         this.key = key;
         return this;
     }
 
-    public MenuItem setFill(boolean fill){
+    public MenuItem setFill(boolean fill) {
         this.fill = fill;
         return this;
     }
 
-    public MenuItem setSlots(Integer... slots){
+    public MenuItem setSlots(Integer... slots) {
         this.slots = slots;
         return this;
     }
@@ -60,6 +60,7 @@ public class MenuItem extends Serializable {
         MenuItem menuItem = new MenuItem();
         menuItem.item = Item.deserialize(yamlFile, path);
         menuItem.fill = yamlFile.getConfig().getBoolean(path + ".fill");
+        menuItem.key = yamlFile.getConfig().getString(path + ".key");
         Integer[] intArray = new Integer[0];
         List<Integer> integerList = yamlFile.getConfig().getIntegerList(path + ".slots");
         intArray = integerList.toArray(intArray);
@@ -67,7 +68,7 @@ public class MenuItem extends Serializable {
         return menuItem;
     }
 
-    public Item getItem(){
+    public Item getItem() {
         return item;
     }
 

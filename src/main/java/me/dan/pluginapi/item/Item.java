@@ -34,13 +34,17 @@ public class Item extends Serializable {
 
     public ItemStack toItemStack(Placeholder... placeholders) {
         if (material == null) {
+            System.out.println("Material is fooked v1");
             return null;
         }
 
         this.material = material.toUpperCase();
         if (Material.getMaterial(material) == null) {
+            System.out.println("Material is fooked");
             return null;
         }
+
+        System.out.println("AMOUNT: " + amount);
 
         ItemStack itemStack = new ItemStack(Material.getMaterial(material), amount <= 0 ? 1 : amount, data != null ? data : 0);
 
