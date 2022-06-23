@@ -6,7 +6,7 @@
 
     <groupId>me.dan</groupId>
     <artifactId>PluginAPI</artifactId>
-    <version>1.7.6</version>
+    <version>1.7.7</version>
     <packaging>jar</packaging>
 
     <name>PluginAPI</name>
@@ -81,7 +81,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.12.2-R0.1-SNAPSHOT</version>
+            <version>1.18.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

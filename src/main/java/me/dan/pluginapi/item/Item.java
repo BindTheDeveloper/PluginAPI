@@ -2,6 +2,7 @@ package me.dan.pluginapi.item;
 
 import lombok.Builder;
 import lombok.Getter;
+import me.dan.pluginapi.PluginAPI;
 import me.dan.pluginapi.configuration.Serializable;
 import me.dan.pluginapi.file.YamlFile;
 import me.dan.pluginapi.message.Placeholder;
@@ -32,6 +33,8 @@ public class Item extends Serializable {
     private List<ItemFlag> itemFlags;
     private int amount;
 
+    private int modelData;
+
     public ItemStack toItemStack(Placeholder... placeholders) {
         if (material == null) {
             System.out.println("Material is fooked v1");
@@ -49,9 +52,18 @@ public class Item extends Serializable {
         ItemStack itemStack = new ItemStack(Material.getMaterial(material), amount <= 0 ? 1 : amount, data != null ? data : 0);
 
         ItemMeta itemMeta = itemStack.getItemMeta();
+
         assert itemMeta != null;
         if (name != null) {
             itemMeta.setDisplayName(Text.c(Placeholder.apply(name, placeholders)));
+        }
+
+        if(modelData > -1){
+            try {
+                itemMeta.setCustomModelData(modelData);
+            }catch (NoSuchMethodError e){
+
+            }
         }
 
         if (lore != null) {
@@ -103,8 +115,14 @@ public class Item extends Serializable {
             }
         }
 
+        if(modelData != -1){
+            map.put("model-data", modelData);
+        }
+
         return map;
     }
+
+
 
     public static Item deserialize(YamlFile yamlFile, String path) {
         YamlConfiguration c = yamlFile.getConfig();
@@ -148,6 +166,10 @@ public class Item extends Serializable {
 
         if (c.contains(path + ".amount")) {
             build.amount(c.getInt(path + ".amount"));
+        }
+
+        if(c.contains(path + ".model-data")){
+            build.modelData(c.getInt(path + ".model-data"));
         }
 
         return build.build();
